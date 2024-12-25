@@ -33,6 +33,7 @@ public class Calculator implements ActionListener {
         textField.setCaretColor(Color.BLACK);
         textField.requestFocusInWindow();
 
+        
         addButton = new JButton("+");
         subButton = new JButton("-");
         mulButton = new JButton("x");
@@ -43,6 +44,8 @@ public class Calculator implements ActionListener {
         clrButton = new JButton("Clr");
         negButton = new JButton("(-)");
 
+
+        
         functionButtons[0] = addButton;
         functionButtons[1] = subButton;
         functionButtons[2] = mulButton;
@@ -74,6 +77,7 @@ public class Calculator implements ActionListener {
         panel.setBounds(50, 100, 300, 300);
         panel.setLayout(new GridLayout(4, 4, 10, 10));
 
+        
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
         panel.add(numberButtons[3]);
@@ -111,6 +115,8 @@ public class Calculator implements ActionListener {
             if (e.getSource() == numberButtons[i]) {
                 textField.setText(textField.getText().concat(String.valueOf(i)));
             }
+
+            
         }
         if (e.getSource() == decButton) {
             textField.setText(textField.getText().concat("."));
@@ -166,7 +172,9 @@ public class Calculator implements ActionListener {
         }
         if (e.getSource() == clrButton) {
             textField.setText("");
+            
         }
+        
         if (e.getSource() == delButton) {
             String string = textField.getText();
             textField.setText("");
@@ -180,4 +188,5 @@ public class Calculator implements ActionListener {
             textField.setText(String.valueOf(temp));
         }
     }
+    
 }
